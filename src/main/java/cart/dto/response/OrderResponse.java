@@ -8,25 +8,21 @@ import java.util.stream.Collectors;
 
 public class OrderResponse {
 
-    private final Long id;
-    private final List<OrderItemResponse> orderItems;
-    private final int totalPrice;
-    private final int payPrice;
-    private final int earnedPoints;
-    private final int usedPoints;
+    private Long id;
+    private List<OrderItemResponse> orderItems;
+    private int totalPrice;
+    private int payPrice;
+    private int earnedPoints;
+    private int usedPoints;
 
     @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
-    private final LocalDateTime orderDate;
+    private LocalDateTime orderDate;
 
-    private OrderResponse(
-            Long id,
-            List<OrderItemResponse> orderItems,
-            int totalPrice,
-            int payPrice,
-            int earnedPoints,
-            int usedPoints,
-            LocalDateTime orderDate
-    ) {
+    private OrderResponse() {
+    }
+
+    private OrderResponse(Long id, List<OrderItemResponse> orderItems, int totalPrice, int payPrice, int earnedPoints,
+            int usedPoints, LocalDateTime orderDate) {
         this.id = id;
         this.orderItems = orderItems;
         this.totalPrice = totalPrice;

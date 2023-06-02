@@ -9,6 +9,7 @@ import cart.domain.PointDiscountPolicy;
 import cart.domain.PointEarnPolicy;
 import cart.dto.response.OrderResponse;
 import cart.dto.response.SortedOrdersResponse;
+import cart.exception.CartItemException;
 import cart.exception.OrderException.NotFound;
 import cart.repository.CartItemRepository;
 import cart.repository.MemberRepository;
@@ -87,7 +88,7 @@ public class OrderService {
 
     private void validateOrderCartItems(List<Long> orderCartItemIds, List<OrderItem> orderCartItems) {
         if (orderCartItemIds.size() != orderCartItems.size()) {
-            throw new NotFound();
+            throw new CartItemException.NotFound();
         }
     }
 }

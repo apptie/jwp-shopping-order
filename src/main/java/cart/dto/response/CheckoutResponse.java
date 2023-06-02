@@ -10,11 +10,14 @@ import java.util.List;
 
 public class CheckoutResponse {
 
-    private final List<CartItemResponse> cartItems;
-    private final int totalPrice;
-    private final int currentPoints;
-    private final int earnedPoints;
-    private final int availablePoints;
+    private List<CartItemResponse> cartItems;
+    private int totalPrice;
+    private int currentPoints;
+    private int earnedPoints;
+    private int availablePoints;
+
+    private CheckoutResponse() {
+    }
 
     private CheckoutResponse(List<CartItemResponse> cartItems, int totalPrice, int currentPoints, int earnedPoints,
             int availablePoints) {
