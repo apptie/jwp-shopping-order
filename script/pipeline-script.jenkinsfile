@@ -5,7 +5,7 @@ pipeline {
         stage('github clone') {
             steps {
                 script {
-                    git branch: '*/step2-dummy-2',
+                    git branch: '*/step2-dummy-dummy',
                         credentialsId: 'github-account',
                         url: 'https://github.com/apptie/jwp-shopping-order'
 
