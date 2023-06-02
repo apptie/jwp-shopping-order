@@ -2,7 +2,7 @@ spring:
   profiles:
     default: local
   config:
-    import: classpath:/jwp-shopping-order-sub.git/application-prod.yml
+    import: classpath:/properties/application-prod.yml
 ---
 spring:
   config:
