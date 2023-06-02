@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    default: local
+  config:
+    import: ../../../jwp-shopping-order-sub/application-prod.yml
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8080
