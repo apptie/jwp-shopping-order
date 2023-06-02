@@ -5,14 +5,10 @@ pipeline {
         stage('github clone') {
             steps {
                 checkout scmGit(
-                  branches: [[name: '*/step2-dummy-dummy']],
-                  extensions: [submodule(
-                    parentCredentials: true,
-                     reference: '', trackingSubmodules: true
-                    )
-                  ],
-                  userRemoteConfigs:
-                  [[credentialsId: 'github-account', url: 'https://github.com/apptie/jwp-shopping-order']])
+                    branches: [[name: '*/step2-dummy-dummy']],
+                    extensions: [submodule(parentCredentials: true,reference: '', trackingSubmodules: true)],
+                    userRemoteConfigs: [[credentialsId: 'github-account', url: 'https://github.com/apptie/jwp-shopping-order']]
+                )
             }
         }
 

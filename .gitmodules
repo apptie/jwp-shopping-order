@@ -1,4 +1,0 @@
-[submodule "src/main/resources/jwp-shopping-order-sub.git"]
-	path = src/main/resources/jwp-shopping-order-sub.git
-	url = https://github.com/apptie/jwp-shopping-order-sub
-	branch = main
