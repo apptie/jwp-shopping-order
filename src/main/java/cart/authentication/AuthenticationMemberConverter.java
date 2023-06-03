@@ -2,7 +2,6 @@ package cart.authentication;
 
 import cart.domain.Member;
 import cart.exception.AuthenticationException;
-import cart.exception.AuthenticationException.InvalidMember;
 import cart.repository.MemberRepository;
 
 public class AuthenticationMemberConverter {
@@ -15,7 +14,7 @@ public class AuthenticationMemberConverter {
 
     public Member convert(AuthInfo authInfo) {
         Member member = memberRepository.findByEmail(authInfo.getEmail())
-                .orElseThrow(InvalidMember::new);
+                .orElseThrow(AuthenticationException.InvalidMember::new);
 
         if (!member.checkPassword(authInfo.getPassword())) {
             throw new AuthenticationException.InvalidMember();
